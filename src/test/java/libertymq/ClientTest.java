@@ -42,7 +42,7 @@ public class ClientTest {
 		try (JMSContext context = cf.createContext()) {
 			Destination destination = context.createQueue("queue:///DEV.QUEUE.1");
 
-			TextMessage message = context.createTextMessage("XXX MESSAGE");
+			TextMessage message = context.createTextMessage("This is a Test MESSAGE");
 
 			JMSProducer producer = context.createProducer();
 			producer.send(destination, message);
