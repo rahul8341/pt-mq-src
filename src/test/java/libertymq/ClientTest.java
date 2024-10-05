@@ -16,21 +16,27 @@ import org.junit.jupiter.api.Test;
 public class ClientTest {
 
 	@Test
-	@Disabled
+	//@Disabled
 	public void jmsPutGet() throws Exception {
 
 		JmsFactoryFactory ff = JmsFactoryFactory.getInstance(WMQConstants.WMQ_PROVIDER);
 		JmsConnectionFactory cf = ff.createConnectionFactory();
 
-		cf.setStringProperty(WMQConstants.WMQ_HOST_NAME, "localhost");
-		cf.setIntProperty(WMQConstants.WMQ_PORT, 1414);
-		cf.setStringProperty(WMQConstants.WMQ_CHANNEL, "DEV.APP.SVRCONN");
+		//cf.setStringProperty(WMQConstants.WMQ_HOST_NAME, "localhost");
+		cf.setStringProperty(WMQConstants.WMQ_HOST_NAME, "meiquemgr-9906.qm.us-south.mq.appdomain.cloud");
+		//cf.setIntProperty(WMQConstants.WMQ_PORT, 1414);
+		cf.setIntProperty(WMQConstants.WMQ_PORT, 30714);
+		//cf.setStringProperty(WMQConstants.WMQ_CHANNEL, "DEV.APP.SVRCONN");
+		cf.setStringProperty(WMQConstants.WMQ_CHANNEL, "CLOUD.APP.SVRCONN");
 		cf.setIntProperty(WMQConstants.WMQ_CONNECTION_MODE, WMQConstants.WMQ_CM_CLIENT);
-		cf.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER, "QM1");
-		cf.setStringProperty(WMQConstants.WMQ_APPLICATIONNAME, "Open Liberty MQ");
+		//cf.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER, "QM1");
+		cf.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER, "meiQueMgr");
+		//cf.setStringProperty(WMQConstants.WMQ_APPLICATIONNAME, "Open Liberty MQ");
 		cf.setBooleanProperty(WMQConstants.USER_AUTHENTICATION_MQCSP, true);
-		cf.setStringProperty(WMQConstants.USERID, "app");
-		cf.setStringProperty(WMQConstants.PASSWORD, "passw0rd");
+		//cf.setStringProperty(WMQConstants.USERID, "app");
+		//cf.setStringProperty(WMQConstants.PASSWORD, "passw0rd");
+		cf.setStringProperty(WMQConstants.USERID, "easemquser1");
+		cf.setStringProperty(WMQConstants.PASSWORD, "JG4-j8-WvD81wJIoToI68TR32GRgDQF-HAEj3ZnxgZkq");
 
 		try (JMSContext context = cf.createContext()) {
 			Destination destination = context.createQueue("queue:///DEV.QUEUE.1");
