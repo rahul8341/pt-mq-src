@@ -16,9 +16,11 @@
     
     <resourceAdapter id="wmqjmsra" location="${wlp.install.dir}../../../ibm/wmq.jakarta.jmsra.rar" />
     -->
-    
+
+    <include location="${shared.resource.dir}/ease/mq/jakarta-ra.xml"/>
+	
     <!-- <jmsConnectionFactory jndiName="jms/wmqCF" connectionManagerRef="ConMgr6">-->
-  <jmsConnectionFactory jndiName="jms/wmqCF" connectionManagerRef="mqConnMgr">  
+    <jmsConnectionFactory jndiName="jms/wmqCF" connectionManagerRef="mqConnMgr">  
       <!--  <properties.wmqjmsra -->
 	<properties.wmqJms	
 	    transportType="CLIENT"	
