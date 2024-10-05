@@ -20,9 +20,9 @@
     <include location="${shared.resource.dir}/ease/mq/jakarta-ra.xml"/>
 	
     <!-- <jmsConnectionFactory jndiName="jms/wmqCF" connectionManagerRef="ConMgr6">-->
-    <jmsConnectionFactory jndiName="jms/wmqCF" connectionManagerRef="mqConnMgr">  
-      <properties.wmqjmsra
-	<!--<properties.wmqJm-->
+    <jmsConnectionFactory jndiName="jms/wmqCF" connectionManagerRef="mqConnMgr">      
+     <!-- <properties.wmqjmsra for OL -->
+      properties.wmqJm	      
 	    transportType="CLIENT"	
 	    channel="CLOUD.APP.SVRCONN"	 
 	    hostName="${mqHostName}"
@@ -44,8 +44,8 @@
     <!-- <connectionManager id="ConMgr6" maxPoolSize="10"/> -->
     <connectionManager id="mqConnMgr" maxPoolSize="2"/>
     <jmsActivationSpec id="libertymq/SampleListenerMDB">
-        <properties.wmqjmsra
-	<!-- <properties.wmqJms	-->
+        <!-- <properties.wmqjmsra for OL -->
+	<properties.wmqJms
 	    transportType="CLIENT"		
             channel="CLOUD.APP.SVRCONN"
 	    hostName="${mqHostName}"
@@ -59,11 +59,10 @@
 	</jmsActivationSpec>
 
     <jmsQueue id="jms/queue1" jndiName="jms/queue1">
-        <properties.wmqjmsra baseQueueName="DEV.QUEUE.1"/>
+        <properties.wmqJms baseQueueName="DEV.QUEUE.1"/>
     </jmsQueue>
 	
-    <!-- properties.wmqjmsra baseQueueName="DEV.QUEUE.1" /> -->
-    <!-- <properties.wmqJms baseQueueName="DEV.QUEUE.1"/> -->	
+    <!-- properties.wmqjmsra baseQueueName="DEV.QUEUE.1" /> for OL -->
 	 
     <!-- END JMS CONFIGURATION -->
 
