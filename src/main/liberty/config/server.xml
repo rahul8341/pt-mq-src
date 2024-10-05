@@ -2,9 +2,9 @@
 <server description="new server">
 
     <featureManager>
-        <!-- <feature>jakartaee-9.1</feature> -->
-	<feature>jakartaee-10.0</feature>    
-	<feature>wmqMessagingClient-3.0</feature>    
+        <feature>jakartaee-9.1</feature>
+	<!--<feature>jakartaee-10.0</feature> -->
+	<!--<feature>wmqMessagingClient-3.0</feature> -->
     </featureManager>
 	
     <!-- START JMS CONFIGURATION -->
@@ -21,8 +21,8 @@
 	
     <!-- <jmsConnectionFactory jndiName="jms/wmqCF" connectionManagerRef="ConMgr6">-->
     <jmsConnectionFactory jndiName="jms/wmqCF" connectionManagerRef="mqConnMgr">  
-      <!--  <properties.wmqjmsra -->
-	<properties.wmqJms	
+      <properties.wmqjmsra
+	<!--<properties.wmqJm-->
 	    transportType="CLIENT"	
 	    channel="CLOUD.APP.SVRCONN"	 
 	    hostName="${mqHostName}"
@@ -44,8 +44,8 @@
     <!-- <connectionManager id="ConMgr6" maxPoolSize="10"/> -->
     <connectionManager id="mqConnMgr" maxPoolSize="2"/>
     <jmsActivationSpec id="libertymq/SampleListenerMDB">
-        <!-- <properties.wmqjmsra -->
-	<properties.wmqJms	
+        <properties.wmqjmsra
+	<!-- <properties.wmqJms	-->
 	    transportType="CLIENT"		
             channel="CLOUD.APP.SVRCONN"
 	    hostName="${mqHostName}"
@@ -59,10 +59,11 @@
 	</jmsActivationSpec>
 
     <jmsQueue id="jms/queue1" jndiName="jms/queue1">
-        <properties.wmqJms baseQueueName="DEV.QUEUE.1"/>
+        <properties.wmqjmsra baseQueueName="DEV.QUEUE.1"/>
     </jmsQueue>
 	
     <!-- properties.wmqjmsra baseQueueName="DEV.QUEUE.1" /> -->
+    <!-- <properties.wmqJms baseQueueName="DEV.QUEUE.1"/> -->	
 	 
     <!-- END JMS CONFIGURATION -->
 
