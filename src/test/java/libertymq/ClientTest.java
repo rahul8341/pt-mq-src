@@ -37,6 +37,7 @@ public class ClientTest {
 		//cf.setStringProperty(WMQConstants.PASSWORD, "passw0rd");
 		cf.setStringProperty(WMQConstants.USERID, "easemquser1");
 		cf.setStringProperty(WMQConstants.PASSWORD, "JG4-j8-WvD81wJIoToI68TR32GRgDQF-HAEj3ZnxgZkq");
+		cf.setStringProperty(WMQConstants.WMQ_SSL_CIPHER_SUITE, "*TLS12ORHIGHER");
 
 		try (JMSContext context = cf.createContext()) {
 			Destination destination = context.createQueue("queue:///DEV.QUEUE.1");
