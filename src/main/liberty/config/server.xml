@@ -3,7 +3,7 @@
 
     <featureManager>
         <!-- <feature>jakartaee-9.1</feature> -->
-	<feature>jakartaee-10</feature>    
+	<feature>jakartaee-10.0</feature>    
 	<feature>wmqMessagingClient-3.0</feature>    
     </featureManager>
 	
