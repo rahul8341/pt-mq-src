@@ -22,17 +22,17 @@
     <!-- <jmsConnectionFactory jndiName="jms/wmqCF" connectionManagerRef="ConMgr6">-->
     <jmsConnectionFactory jndiName="jms/wmqCF" connectionManagerRef="mqConnMgr">      
      <!-- <properties.wmqjmsra for OL -->
-     <properties.wmqJms      
+       <properties.wmqJms      
 	    transportType="CLIENT"	
 	    channel="CLOUD.APP.SVRCONN"	 
 	    hostName="${mqHostName}"
             port="${mqPort}"	
             queueManager="${mqManagerName}"
-            sslCipherSuite="TLS_AES_128_GCM_SHA256"
             userName="${mqAppUserName}"
             password="${mqAppUserPwd}"/>
     </jmsConnectionFactory>
-	
+
+     <!--sslCipherSuite="TLS_AES_128_GCM_SHA256" -->
      <!-- channel="DEV.APP.SVRCONN" 
 	  hostName="localhost"
           port="1414"
