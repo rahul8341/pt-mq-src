@@ -22,7 +22,7 @@
     <!-- <jmsConnectionFactory jndiName="jms/wmqCF" connectionManagerRef="ConMgr6">-->
     <jmsConnectionFactory jndiName="jms/wmqCF" connectionManagerRef="mqConnMgr">      
      <!-- <properties.wmqjmsra for OL -->
-      properties.wmqJm	      
+      properties.wmqJms      
 	    transportType="CLIENT"	
 	    channel="CLOUD.APP.SVRCONN"	 
 	    hostName="${mqHostName}"
