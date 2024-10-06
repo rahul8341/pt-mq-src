@@ -30,6 +30,7 @@
 	    hostName="${mqHostName}"
             port="${mqPort}"	
             queueManager="${mqManagerName}"
+	    sslCipherSuite="*TLS12ORHIGHER"   
             userName="${mqAppUserName}"
             password="${MQCredentials}" />
     </jmsConnectionFactory>
@@ -54,13 +55,14 @@
 	    hostName="${mqHostName}"
             port="${mqPort}"	
             queueManager="${mqManagerName}"
-            sslCipherSuite="TLS_AES_128_GCM_SHA256"
+            sslCipherSuite="*TLS12ORHIGHER"
             userName="${mqAppUserName}"
             password="${MQCredentials}"
             destinationRef="jms/queue1"
             destinationType="jakarta.jms.Queue" />
 	</jmsActivationSpec>
         <!--password="${mqAppUserPwd}" -->
+	<!--sslCipherSuite="TLS_AES_128_GCM_SHA256" -->
 	
     <jmsQueue id="jms/queue1" jndiName="jms/queue1">
         <properties.wmqJms baseQueueName="DEV.QUEUE.1"/>
