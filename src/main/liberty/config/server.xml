@@ -2,7 +2,7 @@
 <server description="new server">
 
     <featureManager>
-        <!--<feature>jakartaee-9.1</feature>-->
+        <!--<feature>jakartaee-9.1</feature> works too-->
 	<feature>jakartaee-10.0</feature>
 	<!--jakarta only -->    
 	<feature>wmqMessagingClient-3.0</feature>
@@ -30,13 +30,13 @@
 	    hostName="${mqHostName}"
             port="${mqPort}"	
             queueManager="${mqManagerName}"
-	    sslCipherSuite="*TLS12ORHIGHER"   
+	    sslCipherSuite="TLS_AES_128_GCM_SHA256"     
             userName="${mqAppUserName}"
             password="${MQCredentials}" />
     </jmsConnectionFactory>
 
     <!-- assword="${mqAppUserPwd}" -->
-     <!--sslCipherSuite="TLS_AES_128_GCM_SHA256" -->
+     <!--sslCipherSuite="TLS_AES_128_GCM_SHA256" sslCipherSuite="*TLS12ORHIGHER"   -->
      <!-- channel="DEV.APP.SVRCONN" 
 	  hostName="localhost"
           port="1414"
@@ -55,7 +55,7 @@
 	    hostName="${mqHostName}"
             port="${mqPort}"	
             queueManager="${mqManagerName}"
-            sslCipherSuite="*TLS12ORHIGHER"
+            sslCipherSuite="TLS_AES_128_GCM_SHA256"
             userName="${mqAppUserName}"
             password="${MQCredentials}"
             destinationRef="jms/queue1"
