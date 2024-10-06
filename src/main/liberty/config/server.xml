@@ -31,9 +31,10 @@
             port="${mqPort}"	
             queueManager="${mqManagerName}"
             userName="${mqAppUserName}"
-            password="${mqAppUserPwd}"/>
+            password="${MQCredentials}" />
     </jmsConnectionFactory>
 
+    <!-- assword="${mqAppUserPwd}" -->
      <!--sslCipherSuite="TLS_AES_128_GCM_SHA256" -->
      <!-- channel="DEV.APP.SVRCONN" 
 	  hostName="localhost"
@@ -55,11 +56,12 @@
             queueManager="${mqManagerName}"
             sslCipherSuite="TLS_AES_128_GCM_SHA256"
             userName="${mqAppUserName}"
-            password="${mqAppUserPwd}"
+            password="${MQCredentials}"
             destinationRef="jms/queue1"
             destinationType="jakarta.jms.Queue" />
 	</jmsActivationSpec>
-
+        <!--password="${mqAppUserPwd}" -->
+	
     <jmsQueue id="jms/queue1" jndiName="jms/queue1">
         <properties.wmqJms baseQueueName="DEV.QUEUE.1"/>
     </jmsQueue>
