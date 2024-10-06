@@ -16,7 +16,9 @@ import org.junit.jupiter.api.Test;
 public class ClientTest {
 
 	@Test
-	//@Disabled
+	//Local test only to pre-check the queue connection variables in server.xml; no connection to IBM Cloud MQ
+	//To run the test, uncomment @Disabled, and enter the password/API key below
+	//@Disabled 
 	public void jmsPutGet() throws Exception {
 
 		JmsFactoryFactory ff = JmsFactoryFactory.getInstance(WMQConstants.WMQ_PROVIDER);
@@ -36,13 +38,14 @@ public class ClientTest {
 		//cf.setStringProperty(WMQConstants.USERID, "app");
 		//cf.setStringProperty(WMQConstants.PASSWORD, "passw0rd");
 		cf.setStringProperty(WMQConstants.USERID, "easemquser1");
-		cf.setStringProperty(WMQConstants.PASSWORD, "JG4-j8-WvD81wJIoToI68TR32GRgDQF-HAEj3ZnxgZkq");
+		cf.setStringProperty(WMQConstants.PASSWORD, "to be filled when testing");
+		//Added ssl cipher suite to avoid '2397' ('MQRC_JSSE_ERROR')
 		cf.setStringProperty(WMQConstants.WMQ_SSL_CIPHER_SUITE, "*TLS12ORHIGHER");
 
 		try (JMSContext context = cf.createContext()) {
 			Destination destination = context.createQueue("queue:///DEV.QUEUE.1");
 
-			TextMessage message = context.createTextMessage("This is a Test MESSAGE");
+			TextMessage message = context.createTextMessage("This is a local test to verify the queue connection variables in server.xml ");
 
 			JMSProducer producer = context.createProducer();
 			producer.send(destination, message);
