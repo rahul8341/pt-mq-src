@@ -82,8 +82,7 @@
 
     <applicationManager autoExpand="true"/>
 
-    <!--<webApplication contextRoot="/libertymq" location="libertymq.war" />-->
-    <webApplication contextRoot="${app.context.root}" location="libertymq.war" />	
+    <webApplication contextRoot="/libertymq" location="libertymq.war" />
  
     <ssl id="defaultSSLConfig" trustDefaultCerts="true" />
 </server>
