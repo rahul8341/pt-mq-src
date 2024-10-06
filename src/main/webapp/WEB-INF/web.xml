@@ -4,10 +4,6 @@
     version="5.0">
     <display-name>Liberty Project</display-name>
     
-    <web>
-       <context-root>libertymq</context-root>
-    <web>
-
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
