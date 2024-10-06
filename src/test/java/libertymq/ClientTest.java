@@ -17,8 +17,8 @@ public class ClientTest {
 
 	@Test
 	//Local test only to pre-check the queue connection variables in server.xml; no connection to IBM Cloud MQ
-	//To run the test, uncomment @Disabled, and enter the password/API key below
-	//@Disabled 
+	//To run the test, comment @Disabled, and enter the password/API key below
+	@Disabled 
 	public void jmsPutGet() throws Exception {
 
 		JmsFactoryFactory ff = JmsFactoryFactory.getInstance(WMQConstants.WMQ_PROVIDER);
