@@ -10,11 +10,11 @@
                   httpPort="9080"
                   httpsPort="9443"
                   host="*" />
-    <!--	
+    
     <basicRegistry id="basic" realm="BasicRealm">
         <user name="adminUser" password="adminUserPwd"/>
     </basicRegistry>
-    -->
+    
 	
     <!-- START JMS CONFIGURATION -->
     <!-- OL 
@@ -76,6 +76,13 @@
 
     <applicationManager autoExpand="true"/>
 
-    <webApplication contextRoot="/libertymq" location="libertymq.war" />
+    <!--<webApplication contextRoot="/libertymq" location="libertymq.war"/>-->	
+    <webApplication contextRoot="/" location="libertymq.war" >
+	<application-bnd>
+            <security-role name="users">
+                <special-subject type="ALL_AUTHENTICATED_USERS"/>
+            </security-role>
+        </application-bnd>    
+    </webApplication>
 	
 </server>
