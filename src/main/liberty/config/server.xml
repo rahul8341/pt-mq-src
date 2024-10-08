@@ -76,8 +76,7 @@
 
     <applicationManager autoExpand="true"/>
 
-    <webApplication contextRoot="/" location="libertymq.war"/>	
-    <!--<webApplication contextRoot="/libertymq" location="libertymq.war"/>-->
+    <webApplication contextRoot="/libertymq" location="libertymq.war"/>
     <!--	
     <webApplication contextRoot="/" location="libertymq.war" >
 	<application-bnd>
