@@ -23,7 +23,8 @@ public class IndexServlet extends HttpServlet {
         //String username = request.getUserPrincipal().getName();
         //request.setAttribute("username", username);
 
-        request.getRequestDispatcher("index.html");
+        request.getRequestDispatcher("index.html")
+               .forward(request, response);
                 
     }
 }
