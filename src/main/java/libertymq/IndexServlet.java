@@ -10,8 +10,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "IndexServlet", urlPatterns = "/")
-@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"users"},
-        transportGuarantee = ServletSecurity.TransportGuarantee.CONFIDENTIAL))
+//@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"users"},
+//        transportGuarantee = ServletSecurity.TransportGuarantee.CONFIDENTIAL))
 public class IndexServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -20,8 +20,8 @@ public class IndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
 
-        String username = request.getUserPrincipal().getName();
-        request.setAttribute("username", username);
+        //String username = request.getUserPrincipal().getName();
+        //request.setAttribute("username", username);
 
         request.getRequestDispatcher("index.html");
                 
