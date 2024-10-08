@@ -20,8 +20,8 @@ public class IndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
 
-        //String username = request.getUserPrincipal().getName();
-        //request.setAttribute("username", username);
+        String username = request.getUserPrincipal().getName();
+        request.setAttribute("username", username);
 
         request.getRequestDispatcher("index.html");
                 //.forward(request, response);
