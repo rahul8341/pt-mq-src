@@ -24,6 +24,6 @@ public class IndexServlet extends HttpServlet {
         request.setAttribute("username", username);
 
         request.getRequestDispatcher("index.html");
-                //.forward(request, response);
+                
     }
 }
