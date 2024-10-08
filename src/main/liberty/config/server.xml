@@ -7,14 +7,17 @@
 	<!--jakarta only -->    
 	<feature>wmqMessagingClient-3.0</feature>
     </featureManager>
+
+    <httpEndpoint id="defaultHttpEndpoint"
+                  httpPort="9080"
+                  httpsPort="9443"
+                  host="*" />
+	
+    <basicRegistry id="basic" realm="BasicRealm">
+        <user name="adminUser" password="adminUserPwd"/>
+    </basicRegistry>
 	
     <!-- START JMS CONFIGURATION -->
-
-    <!-- Real projects should make it secure -->
-    <!--	
-    <variable name="ibmmq.username" value="app"/>
-    <variable name="ibmmq.password" value="passw0rd"/>
-    -->
     <!-- OL 
     <resourceAdapter id="wmqjmsra" location="${wlp.install.dir}../../../ibm/wmq.jakarta.jmsra.rar" />
     -->
@@ -71,14 +74,6 @@
     <!-- properties.wmqjmsra baseQueueName="DEV.QUEUE.1" /> for OL -->
 	 
     <!-- END JMS CONFIGURATION -->
-
-
-    <basicRegistry id="basic" realm="BasicRealm" />
-
-    <httpEndpoint id="defaultHttpEndpoint"
-                  httpPort="9080"
-                  httpsPort="9443"
-                  host="*" />
 
     <applicationManager autoExpand="true"/>
 
