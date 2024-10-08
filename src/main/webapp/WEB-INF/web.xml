@@ -5,8 +5,8 @@
     <display-name>Index</display-name>
     
        <welcome-file-list>
-          <welcome-file>libertymq/index.html</welcome-file>
+          <welcome-file>index.html</welcome-file>
        </welcome-file-list>
 
 </web-app>
-
+<!--<welcome-file>libertymq/index.html</welcome-file> no -->
