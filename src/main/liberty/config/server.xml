@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <server description="new server">
-<!-- add comment to trigger build -->
+<!-- add comment to trigger build Mei updated 05072025-->
     <featureManager>
         <!--<feature>jakartaee-9.1</feature> works too-->
 	<feature>jakartaee-10.0</feature>
