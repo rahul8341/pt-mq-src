@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <server description="new server">
-<!-- add comment to trigger build -->
+<!-- add comment to trigger build Mei updated 05072025-->
     <featureManager>
         <!--<feature>jakartaee-9.1</feature> works too-->
 	<feature>jakartaee-10.0</feature>
@@ -32,11 +32,10 @@
 	    hostName="${mqHostName}"
             port="${mqPort}"	
             queueManager="${mqManagerName}"
-	    sslCipherSuite="TLS_AES_128_GCM_SHA256"     
-            userName="${mqAppUserName}"
+	    sslCipherSuite="TLS_AES_128_GCM_SHA256"   
+	    userName="${mqAppUserName}"    
             password="${MQCredentials}" />
     </jmsConnectionFactory>
-
     <!-- assword="${mqAppUserPwd}" -->
      <!--sslCipherSuite="TLS_AES_128_GCM_SHA256" sslCipherSuite="*TLS12ORHIGHER"   -->
      <!-- channel="DEV.APP.SVRCONN" 
@@ -58,7 +57,7 @@
             port="${mqPort}"	
             queueManager="${mqManagerName}"
             sslCipherSuite="TLS_AES_128_GCM_SHA256"
-            userName="${mqAppUserName}"
+	    userName="${mqAppUserName}"
             password="${MQCredentials}"
             destinationRef="jms/queue1"
             destinationType="jakarta.jms.Queue" />
